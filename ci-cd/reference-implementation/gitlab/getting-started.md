@@ -496,17 +496,23 @@ The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-
 release: "Release-1.0"
 skipIfAlreadyInstalled: true
 artifacts:
-  #src-env-specific-alias-pre: main
-  core: main
-  #src-ui: main
-  #src-access-management: main
-  #src-env-specific-alias-post: main
+  #src-env-specific-alias-pre: LATEST_TAG
+  core: LATEST_TAG
+  #src-ui: LATEST_TAG
+  #src-access-management: LATEST_TAG
+  #src-env-specific-alias-post: LATEST_TAG
 changelog:
   workItemFilter: "issues/[0-9]+"
 ```
 
 {% hint style="info" %}
 The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced. As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+{% endhint %}
+
+{% hint style="info" %}
+Release definitions with artifact versions specified using NPM tags may lead to a release where different artifact versions are installed to each org. This happens when a new artifact is published with the NPM tag, before the release has a chance to complete for every org.  
+  
+Use`LATEST_TAG`or exact version number in release definitions. The former will only consider git tags that were created before the HEAD commit, which should be consistent in a release, across orgs.
 {% endhint %}
 
 ### E. Change Log

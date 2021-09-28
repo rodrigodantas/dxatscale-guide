@@ -136,6 +136,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | [**Script**](https://docs.gitlab.com/ee/ci/yaml/#script) | Specify commands for the runner to execute.  Most scripts in the template leverage `sfpowerscripts:orchestrator` commands during execution. |
 | [**SSH Keys**](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys) | GitLab uses the SSH protocol to securely communicate with Git. When you use SSH keys to authenticate to the GitLab remote server, you don’t need to supply your username and password each time. |
 | [**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage) | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
+| \*\*\*\*[**Tags**](https://docs.gitlab.com/ee/ci/yaml/#tags)\*\*\*\* | Use tags to select a specific runner from the list of all runners that are available for the project.  Depending on your implementation design, specifying a tags will improve job execution times for prepare and build commands. |
 | [**Variables**](https://docs.gitlab.com/ee/ci/variables/) | CI/CD variables are a type of environment variable |
 
 ## Security Design
@@ -344,7 +345,7 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
       <td style="text-align:left">validate-source</td>
       <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorvalidate">orchestrator:validate</a>
       </td>
-      <td style="text-align:left">Validate deployment against scratch org</td>
+      <td style="text-align:left">Validate deployment against scratch org pool(s)</td>
     </tr>
     <tr>
       <td style="text-align:left">Merge</td>

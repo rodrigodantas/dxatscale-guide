@@ -13,6 +13,10 @@ For every major release, we ask you to define an individual release definition f
 1. **Releases from the dev channel** These are releases composed of artifacts from the trunk \(main\) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.   
 2. **Releases from the release channel** Once release is cut from a particular commit id from the develop branch, the release definition based on **LATEST\_TAG** or **exact version** is utilized to form the release. The release pipelines are triggered on demand.
 
+{% hint style="info" %}
+Release definitions with artifact versions specified using NPM tags may lead to a release where different artifact versions are installed to each org. This happens when a new artifact is published with the NPM tag, before the release has a chance to complete for every org.
+{% endhint %}
+
 ## Activities during a Release to non-prod environment
 
 1. Execute Pre Runbook for the particular release

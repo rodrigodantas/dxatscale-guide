@@ -6,7 +6,7 @@ As always, we welcome any feedback from the community to continuously improve th
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system (eg. **Mac OS, Windows, Linux**), there may be some variation in the commands and outputs below on your terminal window.
 
 ### Git
 
@@ -53,23 +53,23 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### A. Enable Dev Hub
 
-[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm\&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
 
 1. Navigate to the **Setup** menu
-2. Go to **Development &gt; Dev Hub**
+2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](../../../.gitbook/assets/image%20%283%29.png)
+![](<../../../.gitbook/assets/image (2).png>)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
 [Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
 
 1. Navigate to the **Setup** menu
-2. Go to **Development &gt; Dev Hub**
+2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](<../../../.gitbook/assets/image (3).png>)
 
 ### C. Authenticate to DevHub via CLI
 
@@ -89,7 +89,7 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
-The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep a record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\__c** that is used to keep a record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
 ```bash
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
@@ -99,11 +99,11 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
 
-* SHAREDDEV \(Shared Development\)
-* ST \(System Test\)
-* SIT \(System Integration Test\)
-* UAT \(User Acceptance Test\)
-* PROD \(Production\)
+* SHAREDDEV (Shared Development)
+* ST (System Test)
+* SIT (System Integration Test)
+* UAT (User Acceptance Test)
+* PROD (Production)
 
 {% hint style="info" %}
 Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
@@ -119,7 +119,7 @@ sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 {% endtab %}
 
 {% tab title="Production" %}
-```text
+```
 sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 ```
 {% endtab %}
@@ -161,11 +161,11 @@ Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github
 
 Click on **Use this template**
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.06-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-09-09 at 10.09.06 am.png>)
 
 Enter in a **Repository name**, set your repo to **Private** and click **Create repository from template**
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.25-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-09-09 at 10.09.25 am.png>)
 
 ### B. Setup your Secrets
 
@@ -176,19 +176,19 @@ Follow instructions in[ 2.F](getting-started.md#f-authenticate-to-lower-sandbox-
 3. In the left sidebar, click Secrets.
 4. On the right bar, click on "New repository secret"
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.35.06-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-09-09 at 10.35.06 am.png>)
 
 Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and paste the `sfdxAuthUrl` from `authfile.json`
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.45.34-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-09-09 at 10.45.34 am.png>)
 
 {% hint style="info" %}
-Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_AUTH\_URL
+Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD_SFDX_AUTH_URL
 {% endhint %}
 
 ### C. Test your pipelines
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-09-09 at 10.50.57 am.png>)
 
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages. If this stage is successful, you can proceed to step 5
 
@@ -203,7 +203,7 @@ As an overview Scratch Pools help development teams save the time taken to spin 
 
 To configure the time expiry and the number of orgs to be created and more, here are the file paths to the following scratch org definition YAML Files:
 
-```text
+```
 YOUR_REPO/config/project-ci-pool-def.json
 YOUR_REPO/config/project-dev-pool-def.json
 ```
@@ -256,7 +256,7 @@ Let's look at DEV Pool Definition now:
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. \(eg. **@dxatscale-poc**\)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. (eg. **@dxatscale-poc**)
 {% endhint %}
 
 {% hint style="info" %}
@@ -305,15 +305,15 @@ The [project configuration file](https://developer.salesforce.com/docs/atlas.en-
 
 The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization.
 
-| Package | Description |
-| :--- | :--- |
-| **src-env-specific-pre** | Installed first across all release environments. |
-| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment-specific metadata has to be aligned with each environment |
-| **core** | A folder to house all the core model of your org which is shared with all other domains. |
-| **src-ui** | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
-| **src-access-management** | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org. |
-| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
-| **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
+| Package                         | Description                                                                                                                                                                                                                                                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **src-env-specific-pre**        | Installed first across all release environments.                                                                                                                                                                                                                                                              |
+| **src-env-specific-alias-pre**  | Installed after src-env-specific-pre and is only used when any environment-specific metadata has to be aligned with each environment                                                                                                                                                                          |
+| **core**                        | A folder to house all the core model of your org which is shared with all other domains.                                                                                                                                                                                                                      |
+| **src-ui**                      | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
+| **src-access-management**       | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org.                                                                                                 |
+| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments                                                                                                                                                                         |
+| **src-temp**                    | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into.                    |
 
 {% hint style="info" %}
 Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitHub. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example.
@@ -352,8 +352,8 @@ The release stage in the **release.yml** file across the defined environments is
 
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
-1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
-2. Navigate to **Package & Registries &gt; Package Registry**
+1. Commit changes to trigger pipeline (eg. Edit **AccountNumber\_\_c** field description)
+2. Navigate to **Package & Registries > Package Registry**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
 ### J. Fetch Provisioned Developer Scratch Org from Pool
@@ -400,7 +400,7 @@ To set up your NewRelic dashboard you will need to:
 * Goto NewRelic, and Click on Import and import dashboard to NewRelic
 * Set your pipelines environment variables with the following
 
-```text
+```
    SFPOWERSCRIPTS_NEWRELIC='true'
    SFPOWERSCRIPTS_NEWRELIC_API_KEY='${{ secrets.NEWRELIC_INSIGHT_INSERT_KEYS }}'
 ```
@@ -411,7 +411,7 @@ To set up your NewRelic dashboard you will need to:
 
 To set up your Data Dog dashboard simply go to each of the pipelines and you will notice a commented out snippet
 
-```text
+```
 #Set the environment variables for tracking metrics
 #env:
   #SFPOWERSCRIPTS_DATADOG: 'true'
@@ -447,4 +447,3 @@ I hope you have learned a great deal through this. as for where you go from here
 Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com), Click [here](https://launchpass.com/dxatscale) to get an invite.
 
 And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions)
-

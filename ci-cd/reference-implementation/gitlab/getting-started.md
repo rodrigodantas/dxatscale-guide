@@ -6,7 +6,7 @@ As always, we welcome any feedback from the community to continuously improve th
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system and shell system \(eg. **Mac OS, Windows, Linux**\), there may be some variations in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system and shell system (eg. **Mac OS, Windows, Linux**), there may be some variations in the commands and outputs below on your terminal window.
 
 ### Git
 
@@ -53,30 +53,30 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### A. Enable Dev Hub
 
-[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm\&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
 
 1. Navigate to the **Setup** menu
-2. Go to **Development &gt; Dev Hub**
+2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](../../../.gitbook/assets/image%20%283%29.png)
+![](<../../../.gitbook/assets/image (2).png>)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
 [Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
 
 1. Navigate to the **Setup** menu
-2. Go to **Development &gt; Dev Hub**
+2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](<../../../.gitbook/assets/image (3).png>)
 
 ### C. Create Service Account for DevOps
 
-For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470&type=1) to manage deployments to your Salesforce instance. The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.
+For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470\&type=1) to manage deployments to your Salesforce instance. The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.
 
 1. Navigate to the **Setup** menu
-2. Go to **Users &gt; Users**
+2. Go to **Users > Users**
 3. Click on **New User** button
 4. Enter **CICD** for **First Name** and **User** for **Last Name**
 5. Enter in a Email address and Username
@@ -84,10 +84,10 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](../../../.gitbook/assets/image%20%2845%29.png)
+![](<../../../.gitbook/assets/image (45).png>)
 
 {% hint style="info" %}
-Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
+Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
 {% endhint %}
 
 ### D. Authenticate to DevHub via CLI
@@ -108,7 +108,7 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### F. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
-The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\__c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
 ```bash
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
@@ -122,11 +122,11 @@ If during installation, you face **Apex compile failure** errors, use the `--ape
 
 The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
 
-* SHAREDDEV \(Shared Development\)
-* ST \(System Test\)
-* SIT \(System Integration Test\)
-* UAT \(User Acceptance Test\)
-* PROD \(Production\)
+* SHAREDDEV (Shared Development)
+* ST (System Test)
+* SIT (System Integration Test)
+* UAT (User Acceptance Test)
+* PROD (Production)
 
 {% hint style="info" %}
 Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
@@ -142,7 +142,7 @@ sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 {% endtab %}
 
 {% tab title="Production" %}
-```text
+```
 sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 ```
 {% endtab %}
@@ -188,31 +188,31 @@ The following steps will guide you through setting up the initial project, proje
 To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/ee/ssh/#generate-an-ssh-key-pair) from the GitLab docs.
 {% endhint %}
 
-1. Navigate to **User Settings &gt; SSH Keys**
+1. Navigate to **User Settings > SSH Keys**
 2. In the **Key** section, paste in the value of your public SSH key
 3. **Title** will self-populate
 4. Select a date value for **Expires at**
 5. Click on the **Add key**
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](<../../../.gitbook/assets/image (23).png>)
 
 ### B. Create New Project
 
 Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working_with_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
 
-1. From the **GitLab Menu**, click on **Projects &gt; Create new project**
+1. From the **GitLab Menu**, click on **Projects > Create new project**
 2. Select **Create blank project**
 3. Enter **dxatscale-poc** for the **Project name**
 4. Select your correct **Project URL**
-5. Enter a **Project description \(optional\)** as needed
+5. Enter a **Project description (optional)** as needed
 6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
 7. Click on the **Create project** button
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](<../../../.gitbook/assets/image (6).png>)
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](<../../../.gitbook/assets/image (7).png>)
 
-![](../../../.gitbook/assets/image%20%2818%29.png)
+![](<../../../.gitbook/assets/image (10).png>)
 
 ### C. Create Project Access Token
 
@@ -222,58 +222,58 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 Project Access Tokens are only supported on self-managed instances on Free tier and above and GitLab SaaS Premium and above.
 {% endhint %}
 
-1. From the **Project Menu**, click on **Settings &gt; Access Tokens**
-2. Enter in **PROJECT\_ACCESS\_TOKEN** for the **Token name**
+1. From the **Project Menu**, click on **Settings > Access Tokens**
+2. Enter in **PROJECT_ACCESS_TOKEN** for the **Token name**
 3. Set the **Expiration date** to a preferred date
 4. Leave the default role to **Maintainer**
 5. For the **Select scopes**, check the **api** option
 6. Click on the **Create project access token** button
 7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](<../../../.gitbook/assets/image (11).png>)
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](<../../../.gitbook/assets/image (13).png>)
 
 ### D. Create Project Variables
 
 [Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines. The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
-1. From the **Project Menu**, click on **Settings &gt; CI/CD**
+1. From the **Project Menu**, click on **Settings > CI/CD**
 2. Scroll down to **Variables** and click on the **Expand** button
 3. Click on **Add variable**
-4. Enter **PROJECT\_ACCESS\_TOKEN** for the **Key** field
+4. Enter **PROJECT_ACCESS_TOKEN** for the **Key** field
 5. Enter the key from previous steps in the **Value** field
 6. In the **Flag** section, enable **Mask Variable** only and uncheck **Protect variable**
-7. Leave **Environment Scope** to **All \(default\)**
+7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](../../../.gitbook/assets/image.png)
+![](<../../../.gitbook/assets/image (14).png>)
 
-![](../../../.gitbook/assets/image%20%2813%29.png)
+![](<../../../.gitbook/assets/image (16).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
-| Key | Value | Type | Scope | Protect | Mask |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| DEVHUB\_ALIAS | devhub | Variable | All \(default\) | No | No |
-| DEVHUB\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| NPM\_SCOPE | @dxatscale-poc | Variable | All \(default\) | No | No |
-| PROD\_ALIAS | prod | Variable | All \(default\) | No | No |
-| PROD\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| PROJECT\_ACCESS\_TOKEN | &lt;token&gt; | Variable | All \(default\) | No | Yes |
-| SHAREDDEV\_ALIAS | shareddev | Variable | All \(default\) | No | No |
-| SHAREDDEV\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| SIT\_ALIAS | sit | Variable | All \(default\) | No | No |
-| SIT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| ST\_ALIAS | st | Variable | All \(default\) | No | No |
-| ST\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
-| UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
+| Key                     | Value          | Type     | Scope         | Protect | Mask |
+| ----------------------- | -------------- | -------- | ------------- | ------- | ---- |
+| DEVHUB_ALIAS            | devhub         | Variable | All (default) | No      | No   |
+| DEVHUB_SFDX_AUTH_URL    | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| NPM_SCOPE               | @dxatscale-poc | Variable | All (default) | No      | No   |
+| PROD_ALIAS              | prod           | Variable | All (default) | No      | No   |
+| PROD_SFDX_AUTH_URL      | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| PROJECT_ACCESS_TOKEN    | \<token>       | Variable | All (default) | No      | Yes  |
+| SHAREDDEV_ALIAS         | shareddev      | Variable | All (default) | No      | No   |
+| SHAREDDEV_SFDX_AUTH_URL | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| SIT_ALIAS               | sit            | Variable | All (default) | No      | No   |
+| SIT_SFDX_AUTH_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| ST_ALIAS                | st             | Variable | All (default) | No      | No   |
+| ST_SFDX_AUTH_URL        | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| UAT_ALIAS               | uat            | Variable | All (default) | No      | No   |
+| UAT_SFDX_AUTH_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
-![Project Variables](../../../.gitbook/assets/image%20%2822%29.png)
+![Project Variables](<../../../.gitbook/assets/image (19).png>)
 
 {% hint style="info" %}
-The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
+The NPM_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
 {% endhint %}
 
 ## 4. Repository
@@ -286,11 +286,11 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](../../../.gitbook/assets/image%20%2819%29.png)
+![](<../../../.gitbook/assets/image (20).png>)
 
 ### B. Clone Project Repository
 
-1. Navigate to **Repository &gt; Files**
+1. Navigate to **Repository > Files**
 2. Click on the **Clone** button to the right and copy the contents in **Clone with SSH** or **HTTPS**
 3. Clone the repository to a folder on your computer
 
@@ -298,7 +298,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](<../../../.gitbook/assets/image (22).png>)
 
 ### C. Copy Template Contents to Project Folder
 
@@ -320,13 +320,13 @@ cp -vR dxatscale-template/* dxatscale-poc
 {% endtab %}
 
 {% tab title="RSYNC" %}
-```text
+```
 rsync -av dxatscale-template/* dxatscale-poc
 ```
 {% endtab %}
 {% endtabs %}
 
-![Template Folder Structure](../../../.gitbook/assets/image%20%2833%29.png)
+![Template Folder Structure](<../../../.gitbook/assets/image (24).png>)
 
 ### D. Commit Changes to Repository
 
@@ -346,15 +346,15 @@ git push
 
 Once the files have been committed, you can verify the files have been pushed the repository and the initial pipeline has skipped being triggered.
 
-1. Navigate to **Repository &gt; Files**
+1. Navigate to **Repository > Files**
 2. Verify all the files are visible in the repository
 
-![](../../../.gitbook/assets/image%20%2829%29.png)
+![](<../../../.gitbook/assets/image (27).png>)
 
-1. Navigate to **CI/CD &gt; Pipelines**
+1. Navigate to **CI/CD > Pipelines**
 2. Verify the pipeline has been skipped
 
-![](../../../.gitbook/assets/image%20%2828%29.png)
+![](<../../../.gitbook/assets/image (28).png>)
 
 ## 5. GitLab: Part II
 
@@ -402,12 +402,12 @@ The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/command
 
 Your Dev Hub org edition determines your scratch org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_editions_and_allocations.htm). These allocations determine how many scratch orgs you can create daily, and how many can be active at a given point.
 
-| Edition | Active Scratch Org Allocation | Daily Scratch Org Allocation |
-| :--- | :--- | :--- |
-| Developer Edition or Trial | 3 | 6 |
-| Enterprise Edition | 40 | 80 |
-| Unlimited Edition | 100 | 200 |
-| Performance Edition | 100 | 200 |
+| Edition                    | Active Scratch Org Allocation | Daily Scratch Org Allocation |
+| -------------------------- | ----------------------------- | ---------------------------- |
+| Developer Edition or Trial | 3                             | 6                            |
+| Enterprise Edition         | 40                            | 80                           |
+| Unlimited Edition          | 100                           | 200                          |
+| Performance Edition        | 100                           | 200                          |
 
 {% hint style="info" %}
 Depending on your Dev Hub licensing, there are limits on the number of active and daily scratch orgs you can create daily. sfpowerscripts will take this in account if you specify the **maxAllocation** property to a number more than you are allocated by Salesforce.
@@ -415,7 +415,7 @@ Depending on your Dev Hub licensing, there are limits on the number of active an
 
 There are two configuration files defined in the template:
 
-**Continuous Integration \(CI\) Pool** - [project-ci-pool-def.json](https://github.com/dxatscale/dxatscale-template/blob/main/config/project-ci-pool-def.json)
+**Continuous Integration (CI) Pool** - [project-ci-pool-def.json](https://github.com/dxatscale/dxatscale-template/blob/main/config/project-ci-pool-def.json)
 
 ```bash
 {
@@ -463,7 +463,7 @@ There are two configuration files defined in the template:
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. \(eg. **@dxatscale-poc**\)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. (eg. **@dxatscale-poc**)
 {% endhint %}
 
 ### C. Project Configuration File
@@ -472,15 +472,15 @@ The [project configuration file](https://developer.salesforce.com/docs/atlas.en-
 
 The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization.
 
-| Package | Description |
-| :--- | :--- |
-| **src-env-specific-pre** | Installed first across all release environments. |
-| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
-| **core** | A folder to house all the core model of your org which is shared with all other domains. |
-| **src-ui** | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
-| **src-access-management** | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org. |
-| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
-| **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
+| Package                         | Description                                                                                                                                                                                                                                                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **src-env-specific-pre**        | Installed first across all release environments.                                                                                                                                                                                                                                                              |
+| **src-env-specific-alias-pre**  | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments                                                                                                                                                                         |
+| **core**                        | A folder to house all the core model of your org which is shared with all other domains.                                                                                                                                                                                                                      |
+| **src-ui**                      | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
+| **src-access-management**       | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org.                                                                                                 |
+| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments                                                                                                                                                                         |
+| **src-temp**                    | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into.                    |
 
 {% hint style="info" %}
 Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example.
@@ -510,8 +510,8 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 {% endhint %}
 
 {% hint style="info" %}
-Release definitions with artifact versions specified using NPM tags may lead to a release where different artifact versions are installed to each org. This happens when a new artifact is published with the NPM tag, before the release has a chance to complete for every org.  
-  
+Release definitions with artifact versions specified using NPM tags may lead to a release where different artifact versions are installed to each org. This happens when a new artifact is published with the NPM tag, before the release has a chance to complete for every org.\
+\
 Use`LATEST_TAG`or exact version number in release definitions. The former will only consider git tags that were created before the HEAD commit, which should be consistent in a release, across orgs.
 {% endhint %}
 
@@ -521,23 +521,23 @@ Use`LATEST_TAG`or exact version number in release definitions. The former will o
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-![](../../../.gitbook/assets/image%20%2834%29.png)
+![](<../../../.gitbook/assets/image (29).png>)
 
 ### F. Build Initial Package Artifacts
 
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
-1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
-2. Navigate to **Package & Registries &gt; Package Registry**
+1. Commit changes to trigger pipeline (eg. Edit **AccountNumber\_\_c** field description)
+2. Navigate to **Package & Registries > Package Registry**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-![](../../../.gitbook/assets/image%20%2827%29.png)
+![](<../../../.gitbook/assets/image (34).png>)
 
 ### G. Scheduled Jobs
 
 [Pipeline schedules](https://docs.gitlab.com/ee/ci/pipelines/schedules.html#pipeline-schedules) are used to schedule pipelines at specific intervals. For the dxatscale-template, we leverage scheduled jobs in GitLab to prepare CI and developer scratch org pools, clean pools daily, publish scratch org and DevOps metrics to dashboards, and manually delete fetched developer scratch orgs.
 
-1. Navigate to **CI/CD &gt; Schedules**
+1. Navigate to **CI/CD > Schedules**
 2. Click on **New schedule**
 3. Enter **schedule-prepare-ci-pool** for **Description**
 4. Click on **Custom** for **Interval Pattern** and enter value of **0 23 \* \* \***
@@ -548,22 +548,22 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 9. Keep **Activated** checked to **Active**
 10. Click **Save pipeline schedule**
 
-![](../../../.gitbook/assets/image%20%2840%29.png)
+![](<../../../.gitbook/assets/image (30).png>)
 
 Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.
 
-| Description | Interval Pattern | Variable Key | Variable Value |
-| :--- | :--- | :--- | :--- |
-| **schedule-prepare-ci-pool** | 0 23 \* \* \* | TARGETTASKNAME | schedule-prepare-ci-pool |
-| **schedule-prepare-dev-pool** | 0 22 \* \* \* | TARGETTASKNAME | schedule-prepare-dev-pool |
-| **schedule-clean-pool** | 0 19 \* \* \* | TARGETTASKNAME | schedule-clean-pool |
-| **schedule-report-so-pool** | 0 \* \* \* \* | TARGETTASKNAME | schedule-report-so-pool |
+| Description                   | Interval Pattern | Variable Key   | Variable Value            |
+| ----------------------------- | ---------------- | -------------- | ------------------------- |
+| **schedule-prepare-ci-pool**  | 0 23 \* \* \*    | TARGETTASKNAME | schedule-prepare-ci-pool  |
+| **schedule-prepare-dev-pool** | 0 22 \* \* \*    | TARGETTASKNAME | schedule-prepare-dev-pool |
+| **schedule-clean-pool**       | 0 19 \* \* \*    | TARGETTASKNAME | schedule-clean-pool       |
+| **schedule-report-so-pool**   | 0 \* \* \* \*    | TARGETTASKNAME | schedule-report-so-pool   |
 
 {% hint style="info" %}
 **schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog. If not, you can skip this configuration.
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%2831%29.png)
+![](<../../../.gitbook/assets/image (31).png>)
 
 Once all schedule jobs have been configured, you can trigger the **schedule-prepare-ci-pool** and **schedule-prepare-dev-pool** jobs manually by clicking on the **play button** for each job.
 
@@ -590,13 +590,13 @@ status       Assigned
 
 ### I. Manually Delete Fetched Scratch Org
 
-1. Navigate to **CI/CD &gt; Pipelines**
+1. Navigate to **CI/CD > Pipelines**
 2. Click on **Run Pipeline**
-3. Enter in the username for the developer scratch org \(eg. **test-uaojizr8cqxi@example.com**\) for the value of **SCRATCH\_ORG\_USERNAME** variable key
+3. Enter in the username for the developer scratch org (eg. **test-uaojizr8cqxi@example.com**) for the value of **SCRATCH_ORG_USERNAME** variable key
 4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
 5. Click on **Run pipeline**
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![](<../../../.gitbook/assets/image (33).png>)
 
 ### J. Merge Requests and Merge to Main
 
@@ -630,4 +630,3 @@ I hope you have learned a great deal through this. As for where you go from here
 Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com). Click [here](https://launchpass.com/dxatscale) to get an invite.
 
 And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions).
-

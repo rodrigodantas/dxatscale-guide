@@ -320,7 +320,7 @@ cp -vR dxatscale-template/* dxatscale-poc
 {% endtab %}
 
 {% tab title="RSYNC" %}
-```
+```text
 rsync -av dxatscale-template/* dxatscale-poc
 ```
 {% endtab %}

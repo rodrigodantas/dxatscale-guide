@@ -6,37 +6,37 @@ As always, we welcome any feedback from the community to continuously improve th
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system and shell system (eg. **Mac OS, Windows, Linux**), there may be some variations in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system and shell system (eg. **Mac OS, Windows, Linux**), there may be some variations in the commands and outputs below on your terminal window.f
 
 ### Git
 
 ```bash
 git version
-> git version 2.32.0
+> git version 2.33.1
 ```
 
 ### SFDX CLI
 
 ```bash
 sfdx version
-> sfdx-cli/7.110.0 darwin-x64 node-v16.6.0
+> sfdx-cli/7.122.1 darwin-x64 node-v16.11.1
 ```
 
 ### SFDX Plugins
 
 ```bash
 sfdx plugins
-> @dxatscale/sfpowerscripts 8.2.1
-  sfdmu 4.4.5
-  sfpowerkit 3.2.2
+> @dxatscale/sfpowerscripts 8.5.2
+  sfdmu 4.5.7
+  sfpowerkit 3.3.2
 ```
 
 ### Visual Studio Code
 
 ```bash
 code --version
-> 1.60.0
-e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff
+> 1.61.2
+6cba118ac49a1b88332f312a8f67186f7f3c1643
 x64
 ```
 
@@ -44,7 +44,7 @@ x64
 
 ```bash
 npm --version
-> 7.19.1
+> 8.0.0
 ```
 
 ## 2. Salesforce
@@ -53,7 +53,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### A. Enable Dev Hub
 
-[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm\&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx\_setup\_enable\_devhub.htm\&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
 
 1. Navigate to the **Setup** menu
 2. Go to **Development > Dev Hub**
@@ -63,7 +63,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
-[Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
+[Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
 
 1. Navigate to the **Setup** menu
 2. Go to **Development > Dev Hub**
@@ -92,7 +92,7 @@ Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&
 
 ### D. Authenticate to DevHub via CLI
 
-Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
 
 ```bash
 sfdx auth:web:login -a DevHub -r https://login.salesforce.com
@@ -108,19 +108,19 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### F. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
-The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\__c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
 ```bash
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
 ```
 
 {% hint style="danger" %}
-If during installation, you face **Apex compile failure** errors, use the `--apexcompile=package` flag for the `sfdx force:package:install` command to only compile package related classes as a workaround.  
+If during installation, you face **Apex compile failure** errors, use the `--apexcompile=package` flag for the `sfdx force:package:install` command to only compile package related classes as a workaround.
 {% endhint %}
 
 ### G. Authenticate to Lower Sandbox Environments via CLI
 
-The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
+The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_web.htm) first prior to running the pipeline.
 
 * SHAREDDEV (Shared Development)
 * ST (System Test)
@@ -150,7 +150,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### H. Generate SFDX auth URL for Pipeline Authentication
 
-In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the **sfdxAuthUrl** for use in future pipeline configuration steps.
+In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the **sfdxAuthUrl** for use in future pipeline configuration steps.
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
@@ -198,7 +198,7 @@ To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/e
 
 ### B. Create New Project
 
-Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working_with_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
+Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working\_with\_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
 
 1. From the **GitLab Menu**, click on **Projects > Create new project**
 2. Select **Create blank project**
@@ -216,14 +216,14 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ### C. Create Project Access Token
 
-[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository.
+[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project\_access\_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository.
 
 {% hint style="info" %}
 Project Access Tokens are only supported on self-managed instances on Free tier and above and GitLab SaaS Premium and above.
 {% endhint %}
 
 1. From the **Project Menu**, click on **Settings > Access Tokens**
-2. Enter in **PROJECT_ACCESS_TOKEN** for the **Token name**
+2. Enter in **PROJECT\_ACCESS\_TOKEN** for the **Token name**
 3. Set the **Expiration date** to a preferred date
 4. Leave the default role to **Maintainer**
 5. For the **Select scopes**, check the **api** option
@@ -241,7 +241,7 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 1. From the **Project Menu**, click on **Settings > CI/CD**
 2. Scroll down to **Variables** and click on the **Expand** button
 3. Click on **Add variable**
-4. Enter **PROJECT_ACCESS_TOKEN** for the **Key** field
+4. Enter **PROJECT\_ACCESS\_TOKEN** for the **Key** field
 5. Enter the key from previous steps in the **Value** field
 6. In the **Flag** section, enable **Mask Variable** only and uncheck **Protect variable**
 7. Leave **Environment Scope** to **All (default)**
@@ -253,34 +253,34 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
-| Key                     | Value          | Type     | Scope         | Protect | Mask |
-| ----------------------- | -------------- | -------- | ------------- | ------- | ---- |
-| DEVHUB_ALIAS            | devhub         | Variable | All (default) | No      | No   |
-| DEVHUB_SFDX_AUTH_URL    | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
-| NPM_SCOPE               | @dxatscale-poc | Variable | All (default) | No      | No   |
-| PROD_ALIAS              | prod           | Variable | All (default) | No      | No   |
-| PROD_SFDX_AUTH_URL      | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
-| PROJECT_ACCESS_TOKEN    | \<token>       | Variable | All (default) | No      | Yes  |
-| SHAREDDEV_ALIAS         | shareddev      | Variable | All (default) | No      | No   |
-| SHAREDDEV_SFDX_AUTH_URL | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
-| SIT_ALIAS               | sit            | Variable | All (default) | No      | No   |
-| SIT_SFDX_AUTH_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
-| ST_ALIAS                | st             | Variable | All (default) | No      | No   |
-| ST_SFDX_AUTH_URL        | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
-| UAT_ALIAS               | uat            | Variable | All (default) | No      | No   |
-| UAT_SFDX_AUTH_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| Key                        | Value          | Type     | Scope         | Protect | Mask |
+| -------------------------- | -------------- | -------- | ------------- | ------- | ---- |
+| DEVHUB\_ALIAS              | devhub         | Variable | All (default) | No      | No   |
+| DEVHUB\_SFDX\_AUTH\_URL    | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| NPM\_SCOPE                 | @dxatscale-poc | Variable | All (default) | No      | No   |
+| PROD\_ALIAS                | prod           | Variable | All (default) | No      | No   |
+| PROD\_SFDX\_AUTH\_URL      | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| PROJECT\_ACCESS\_TOKEN     | \<token>       | Variable | All (default) | No      | Yes  |
+| SHAREDDEV\_ALIAS           | shareddev      | Variable | All (default) | No      | No   |
+| SHAREDDEV\_SFDX\_AUTH\_URL | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| SIT\_ALIAS                 | sit            | Variable | All (default) | No      | No   |
+| SIT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| ST\_ALIAS                  | st             | Variable | All (default) | No      | No   |
+| ST\_SFDX\_AUTH\_URL        | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
+| UAT\_ALIAS                 | uat            | Variable | All (default) | No      | No   |
+| UAT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
 ![Project Variables](<../../../.gitbook/assets/image (19).png>)
 
 {% hint style="info" %}
-The NPM_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
+The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
 {% endhint %}
 
 ## 4. Repository
 
 ### A. Clone Template Repository
 
-The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) repository contains the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) configuration file for CI/CD jobs for DX@Scale. It exists in the root of of the directory which is the default configuration for GitLab. To start, clone the repository to your computer.
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) repository contains the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab\_ci\_yaml.html) configuration file for CI/CD jobs for DX@Scale. It exists in the root of of the directory which is the default configuration for GitLab. To start, clone the repository to your computer.
 
 ```bash
 git clone https://github.com/dxatscale/dxatscale-template.git
@@ -320,7 +320,7 @@ cp -vR dxatscale-template/* dxatscale-poc
 {% endtab %}
 
 {% tab title="RSYNC" %}
-```text
+```
 rsync -av dxatscale-template/* dxatscale-poc
 ```
 {% endtab %}
@@ -362,7 +362,7 @@ In this section, we will review and optionally customize the configuration files
 
 ### A. Scratch Org Definition File
 
-The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
+The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_scratch\_orgs\_def\_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
 Customize the provided scratch org definition file for your use case and save and commit the file to repository. If you want to use the file as is to test, **no action** is required.
 
@@ -400,7 +400,7 @@ Customize the provided scratch org definition file for your use case and save an
 
 The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts. The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.
 
-Your Dev Hub org edition determines your scratch org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_editions_and_allocations.htm). These allocations determine how many scratch orgs you can create daily, and how many can be active at a given point.
+Your Dev Hub org edition determines your scratch org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_scratch\_orgs\_editions\_and\_allocations.htm). These allocations determine how many scratch orgs you can create daily, and how many can be active at a given point.
 
 | Edition                    | Active Scratch Org Allocation | Daily Scratch Org Allocation |
 | -------------------------- | ----------------------------- | ---------------------------- |
@@ -468,9 +468,13 @@ Update the "**scope**" value for "**npm**" from the default "**@org-name**" to y
 
 ### C. Project Configuration File
 
-The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
+The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_ws\_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
 The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization.
+
+{% hint style="info" %}
+When you push the source to the org, the metadata is deployed in the order that you list the package directories in [sfdx-project.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_ws\_mpd.htm)
+{% endhint %}
 
 | Package                         | Description                                                                                                                                                                                                                                                                                                   |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -592,7 +596,7 @@ status       Assigned
 
 1. Navigate to **CI/CD > Pipelines**
 2. Click on **Run Pipeline**
-3. Enter in the username for the developer scratch org (eg. **test-uaojizr8cqxi@example.com**) for the value of **SCRATCH_ORG_USERNAME** variable key
+3. Enter in the username for the developer scratch org (eg. **test-uaojizr8cqxi@example.com**) for the value of **SCRATCH\_ORG\_USERNAME** variable key
 4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
 5. Click on **Run pipeline**
 
@@ -620,6 +624,20 @@ Coming Soon.
 ### B. Data Dog Configuration
 
 Coming Soon.
+
+
+
+## Troubleshooting Tips
+
+#### Release Errors
+
+**Error: **
+
+* ERROR running auth:sfdxurl:store: ENOENT: no such file or directory, open '\[MASKED]'
+
+**Resolution:**
+
+1. Review the ENV\_SFDX\_AUTH\_URL is configured to "File" Type instead of "Variable".
 
 ## Final Words
 

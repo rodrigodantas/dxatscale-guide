@@ -619,7 +619,9 @@ status       Assigned
 
 ### A. New Relic Configurations
 
-Coming Soon.
+![New Account Creation](<../../../.gitbook/assets/image (8).png>)
+
+![Email Verification](<../../../.gitbook/assets/image (15).png>)
 
 ### B. Data Dog Configuration
 
@@ -629,13 +631,24 @@ Coming Soon.
 
 ## Troubleshooting Tips
 
+#### Validation Errors
+
+**Error:**
+
+* Failed to fetch scratch org from **ci**, Are you sure you created this pool using a DevHub authenticated using auth:sfdxurl or auth:web or auth:accesstoken:store
+
+**Possible Resolution Steps:**
+
+1. Review and confirm scheduled job "schedule-prepare-ci-pool" has executed correctly.&#x20;
+2. Confirm ci scratch orgs have been created in the DevHub (eg. `sfdx sfpowerscripts:pool:list -v DevHub -a`)
+
 #### Release Errors
 
 **Error: **
 
 * ERROR running auth:sfdxurl:store: ENOENT: no such file or directory, open '\[MASKED]'
 
-**Resolution:**
+**Possible Resolution Steps:**
 
 1. Review the ENV\_SFDX\_AUTH\_URL is configured to "File" Type instead of "Variable".
 

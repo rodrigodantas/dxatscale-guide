@@ -4,11 +4,6 @@ For defining the boundaries of a package, we can adopt, but vary slightly, [OOD 
 
 The first three package principles are about package _**cohesion**_, they tell us what to put inside packages:
 
-| **REP** | The Release Reuse Equivalency Principle | _The granule of **reuse** is the granule of **release**._      |
-| ------- | --------------------------------------- | -------------------------------------------------------------- |
-| **CCP** | The Common Closure Principle            | _Components that **change together** are packaged together._   |
-| **CRP** | The Common Reuse Principle              | _Components that are **used together** are packaged together._ |
-
 \
 The last three principles are about the _**couplings**_ between packages and talk about metrics that evaluate the package structure of a system.\
 

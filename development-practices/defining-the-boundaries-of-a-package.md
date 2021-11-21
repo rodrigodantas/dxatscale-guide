@@ -4,7 +4,12 @@ For defining the boundaries of a package, we can adopt, but vary slightly, [OOD 
 
 The first three package principles are about package _**cohesion**_, they tell us what to put inside packages:
 
-\
+| **REP** | The Release Reuse Equivalency Principle | _The granule of **reuse** is the granule of **release**._      |
+| ------- | --------------------------------------- | -------------------------------------------------------------- |
+| **CCP** | The Common Closure Principle            | _Components that **change together** are packaged together._   |
+| **CRP** | The Common Reuse Principle              | _Components that are **used together** are packaged together._ |
+
+
 The last three principles are about the _**couplings**_ between packages and talk about metrics that evaluate the package structure of a system.\
 
 
@@ -30,11 +35,11 @@ Reusability is one of the most oft claimed goals of OOD. But what is reuse? &#x2
 Reuse can come in different flavours
 
 * Textually inserting a bunch of code/components from one source to another
-* Utilizing an existing module from someone else and brining into the current source
+* Utilizing an existing module from someone else and bringing into the current source
 
-The above examples of Reuse are of code/component copying; and it comes with a serious disadvantage, one must own the code/component that we copied. If the code/component doesn't work in the target environment, it must be changed. If there are bugs, it might be fixed. Fixes from the original author must be manually merged into the source.  Eventually the code/component copied diverges from the original that it can be hardly. While code/component copying can make it easier to do some initial development; it does not help very much with the most expensive phase of the software lifecycle, _**maintenance**_.
+The above examples of Reuse are of code/component copying; and it comes with a serious disadvantage, one must own the code/component that we copied. If the code/component doesn't work in the target environment, it must be changed. If there are bugs, it might be fixed. Fixes from the original author must be manually merged into the source.  Eventually the code/component copied diverges from the original that it can be hardly recognized. While code/component copying can make it easier to do some initial development; it does not help very much with the most expensive phase of the software lifecycle, _**maintenance**_.
 
-REP states that the granule of reuse can be no smaller than the granule of release. Anything that we reuse must also be released. Packages are a candidate for a releasable entity. It might be possible to release and track classes or components, but there are so many components in a typical salesforce org, that this would certainly overwhelm the release tracking system. We need some larger scale entity to act as the granule of release; and the package fits this need well.
+REP states that the granule of reuse can be no smaller than the granule of release. Anything that we reuse must also be released. Packages are a candidate for a releasable entity. It might be possible to release and track classes or components, but there are so many components in a typical Salesforce org, that this would certainly overwhelm the release tracking system. We need some larger scale entity to act as the granule of release; and the package fits this need well.
 
 #### The Common Closure Principle (CCP)
 
@@ -46,9 +51,9 @@ A simple example might be a trigger handler interface and its associated base cl
 
 #### The Common Reuse Principle (CRP)
 
-> **The components in a package should be closed together against the same kind of changes., A change that affects a package affects all components in that package**
+> **The components in a package should be closed together against the same kind of changes. A change that affects a package affects all components in that package**
 
-More important than reusability, is maintainability. When a change to components of an application is required, it would be beneficial if the changes were focused on a single package rather than across multiple packages. This ensures that a release for this change only contains the one package, other packages that don't depend upon the changed package do not need to be revalidated or rereleased.
+More important than reusability, is maintainability. When a change to components of an application is required, it would be beneficial if the changes were focused on a single package rather than across multiple packages. This ensures that a release for this change only contains the one package, other packages that don't depend upon the changed package do not need to be revalidated or re-released.
 
 The **CCP** is an attempt to gather in one place all the components that are likely to change for the same reasons. For example, if two classes, are so tightly bound, either physically or conceptually, such that they always change together; then they belong in the same package. This minimizes the workload related to releasing, revalidating, and redistributing the software.
 
@@ -60,9 +65,9 @@ This principle is strongly associated with the _Open Closed Principle_ (**OCP**)
 
 #### The Acyclic Dependencies Principle (ADP)
 
-> **The dependency structure between packages must be a directed acyclic graph (DAG). That is there must be no cycles in the dependency structure**
+> **The dependency structure between packages must be a directed acyclic graph (DAG). That is there must be no cycles in the dependency structure.**
 
-Cyclical dependencies are not allowed in packages for a reason, it makes deploying packages impossible, imagine the following scenario where one has three packages, A, B and C, with the following dependency order, where B is dependent on A, C is dependent on B and A, and A itself which depends on Package C
+Cyclical dependencies are not allowed in packages for a reason, it makes deploying packages impossible, imagine the following scenario where one has three packages A, B and C. These packages have the following dependency order, where B is dependent on A, C is dependent on B and A, and A itself which depends on Package C.
 
 ![Package C with a dependency cycle](../.gitbook/assets/package-dependency.png)
 
@@ -76,13 +81,13 @@ Designs cannot be completely static. Some volatility is necessary if the design 
 
 Any package that we expect to be volatile should not be depended upon by a package that is difficult to change! Otherwise the volatile package will also be difficult to change.
 
-By conforming to the **SDP**, we ensure that modules that are designed to be instable (i.e. easy to change) are not depended upon by modules that are more stable (i.e. harder to change) than they are.
+By conforming to the **SDP**, we ensure that modules that are designed to be unstable (i.e. easy to change) are not depended upon by modules that are more stable (i.e. harder to change) than they are.
 
 #### The Stable Abstractions Principle (SAP) \[Code-Related]
 
-> **Packages that are maximally stable should be maximally abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.**
+> **Packages that are maximally stable should be maximally abstract. Unstable packages should be concrete. The abstraction of a package should be in proportion to its stability.**
 
-This principle sets up a relationship between stability and abstractness. It says that a stable package should also be abstract so that its stability does not prevent it from being extended. On the other hand, it says that an instable package should be concrete since its instability allows the concrete code within it to be easily changed.
+This principle sets up a relationship between stability and abstractness. It says that a stable package should also be abstract so that its stability does not prevent it from being extended. On the other hand, it says that an unstable package should be concrete since its instability allows the concrete code within it to be easily changed.
 
 ![](../.gitbook/assets/sdp-uml-reference.png)
 
@@ -90,7 +95,7 @@ Consider the “_Copy_” program above. The “_Reader_” and “_Writer_” c
 
 Thus, if a package is to be stable, it should also consist of abstract classes so that it can be extended. Stable packages that are extensible are flexible and do not constrain the design.
 
-The **SAP** and the **SDP** combined amount to the Dependency Inversion Principle for Packages. This is true because the **SDP** says that dependencies should run in the direction of stability, and the **SAP** says that stability implies abstraction. Thus, dependencies run in the direction of abstraction.
+The **SAP** and the **SDP** combined amount to the Dependency Inversion technique for Packages. This is true because the **SDP** says that dependencies should run in the direction of stability, and the **SAP** says that stability implies abstraction. Thus, dependencies run in the direction of abstraction.
 
 However, the **DIP** is a principle that deals with _classes_. And with classes there are no shades of grey. Either a class is abstract, or it is not. The combination of the **SDP** and **SAP** deal with packages and allow that a package can be partially abstract and partially stable.
 

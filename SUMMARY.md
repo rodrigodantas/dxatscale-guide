@@ -21,22 +21,6 @@
   * [Scratch Org Pooling Part 2](challenges/challenges/scratch-org-pooling-part-2-prepare.md)
   * [Validating your changes](challenges/challenges/validating-your-changes.md)
 
-## Get Started <a href="#ci-cd" id="ci-cd"></a>
-
-* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
-* [Reference Implementation](ci-cd/reference-implementation/README.md)
-  * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/azure-devops/getting-started.md)
-  * [GitHub](ci-cd/reference-implementation/github/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/github/getting-started.md)
-    * [Solution Overview](ci-cd/reference-implementation/github/solution-overview.md)
-  * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
-    * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
-
 ## Development Practices
 
 * [Modular Deployment](development-practices/modular-deployment.md)
@@ -56,6 +40,22 @@
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
+
+## CI/CD
+
+* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [Reference Implementation](ci-cd/reference-implementation/README.md)
+  * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/azure-devops/getting-started.md)
+  * [GitHub](ci-cd/reference-implementation/github/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/github/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/github/solution-overview.md)
+  * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
 ## Environment Management <a href="#environment" id="environment"></a>
 

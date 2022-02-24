@@ -14,6 +14,8 @@ The following pages help you understand the correct packaging technique dependin
 [data-packages.md](data-packages.md)
 {% endcontent-ref %}
 
+A short summary of various package types are provided below
+
 | Features                                           | Unlocked Packages                                                                                                | Org Dependent Unlocked Packages                                                                                  | Source Packages                                                                                                                                         | Data Packages                      |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Dependency Validation                              | Occurs during package creation                                                                                   | Occurs during package installation                                                                               | Occurs during package installation                                                                                                                      | N/A                                |

@@ -3,7 +3,7 @@
 * [DX@Scale](README.md)
 * [Principles](principles.md)
 
-## Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
+## 🤸 Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
 
 * [Intro](challenges/intro.md)
 * [Prerequisites](challenges/prerequisites.md)
@@ -21,7 +21,7 @@
   * [Scratch Org Pooling Part 2](challenges/challenges/scratch-org-pooling-part-2-prepare.md)
   * [Validating your changes](challenges/challenges/validating-your-changes.md)
 
-## Development Practices
+## 🏗 Development Practices
 
 * [Modular Deployment](development-practices/modular-deployment.md)
 * [Organizing your code / config](development-practices/modularizing-your-code-config.md)
@@ -34,14 +34,14 @@
 * [Managing Profiles](development-practices/managing-profiles.md)
 * [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
-## Source Code Management <a href="#scm" id="scm"></a>
+## 🧬 Source Code Management <a href="#scm" id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
 
-## CI/CD
+## ♾ CI/CD
 
 * [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)
@@ -57,7 +57,7 @@
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
     * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
-## Environment Management <a href="#environment" id="environment"></a>
+## 🌲 Environment Management <a href="#environment" id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
 * [Connecting Environments](environment/connecting-environments.md)
@@ -66,52 +66,43 @@
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
-## Release Management <a href="#release" id="release"></a>
+## 📅 Release Management <a href="#release" id="release"></a>
 
 * [Monitoring Releases](release/monrel.md)
 * [Releasing to an Environment](release/release-environment.md)
 
-## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
+## 🍨 Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
-## sfpowerscripts
+## 🍕 projects
 
-* [Overview](sfpowerscripts/overview.md)
-* [Features](sfpowerscripts/features.md)
-* [Docker Images](sfpowerscripts/docker-images.md)
-* [Artifacts](sfpowerscripts/artifacts.md)
-* [Metrics and Dashboards](sfpowerscripts/metrics-and-dashboards.md)
-* [Orchestrator](sfpowerscripts/orchestrator/README.md)
-  * [Build & Quick Build](sfpowerscripts/orchestrator/build-and-quick-build.md)
-  * [Publish](sfpowerscripts/orchestrator/publish.md)
-  * [Deploy](sfpowerscripts/orchestrator/deploy.md)
-  * [Release](sfpowerscripts/orchestrator/release.md)
-  * [Prepare](sfpowerscripts/orchestrator/prepare/README.md)
-    * [Scratch Org Pool Configuration](sfpowerscripts/orchestrator/prepare/scratch-org-pool-configuration.md)
-  * [Validate](sfpowerscripts/orchestrator/validate.md)
-* [Command Glossary](sfpowerscripts/command-glossary.md)
-
-## sfpowerkit
-
-* [Overview](sfpowerkit/overview.md)
-* [Command Glossary](sfpowerkit/command-glossary.md)
-
-## sfp cli
-
-* [Overview](sfp-cli/overview.md)
-* [Command Glossary](sfp-cli/command-glossary.md)
-
-## OTHER TOOLS
-
+* [sfpowerscripts](projects/sfpowerscripts/README.md)
+  * [Features](projects/sfpowerscripts/features.md)
+  * [Docker Images](projects/sfpowerscripts/docker-images.md)
+  * [Artifacts](projects/sfpowerscripts/artifacts.md)
+  * [Metrics and Dashboards](projects/sfpowerscripts/metrics-and-dashboards.md)
+  * [Orchestrator](projects/sfpowerscripts/orchestrator/README.md)
+    * [Build & Quick Build](projects/sfpowerscripts/orchestrator/build-and-quick-build.md)
+    * [Publish](projects/sfpowerscripts/orchestrator/publish.md)
+    * [Deploy](projects/sfpowerscripts/orchestrator/deploy.md)
+    * [Release](projects/sfpowerscripts/orchestrator/release.md)
+    * [Prepare](projects/sfpowerscripts/orchestrator/prepare/README.md)
+      * [Scratch Org Pool Configuration](projects/sfpowerscripts/orchestrator/prepare/scratch-org-pool-configuration.md)
+    * [Validate](projects/sfpowerscripts/orchestrator/validate.md)
+  * [Command Glossary](projects/sfpowerscripts/command-glossary.md)
+* [sfp-cli](projects/sfp-cli/README.md)
+  * [Command Glossary](projects/sfp-cli/command-glossary.md)
+* [sfpowerkit](projects/sfpowerkit/README.md)
+  * [Command Glossary](projects/sfpowerkit/command-glossary.md)
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 
-## faq
+## ⁉ faq
 
 * [Packaging](faq/packaging.md)
 * [sfpowerscripts](faq/sfpowerscripts.md)
 
-## Media Library
+## 🎬 Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
   * [sfpowerscripts orchestrator pool breaking changes](media-library/knowledge-articles/sfpowerscripts-orchestrator-pool-breaking-changes.md)
@@ -135,7 +126,7 @@
 
 * [Tools & Assets Registry](assets-registry.md)
 
-## About Us
+## 🌈 About Us
 
 * [Meet Our Team](about-us/meet-our-team.md)
 * [Key Contributors](about-us/contributors.md)

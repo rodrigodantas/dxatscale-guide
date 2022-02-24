@@ -2,7 +2,7 @@
 description: The DX@Scale CI/CD Orchestrator
 ---
 
-# Overview
+# sfpowerscripts
 
 An end-to-end build and deployment orchestrator for modular development on Salesforce that can be implemented in any CI/CD platform of choice. sfpowerscripts is part of the [**DX@Scale**](https://dxatscale.io) initiative, productivity boosters for engineering teams on Salesforce.
 
@@ -38,7 +38,7 @@ The following package creation commands shows this in action
 * Create Unlocked Package (inluding Org dependent unlocked packages)
 * Create Data Package, for Records Based Configuration, such as vlocity datapacks
 
-![](<../.gitbook/assets/image (50).png>)
+![](<../../.gitbook/assets/image (50).png>)
 
 These commands create an artifact named`<package_name>_sfpowerscripts_artifact_<ver>.zip`. This zip file contains the following items
 
@@ -54,7 +54,7 @@ One of the frequent questions that is often asked to us is:
 
 _**Does deploying packages compared to delta deployments (deploys only what is changed between two commits or a range of commits) make the overall deployment slower?**_
 
-As packages are always deployed in its entirety, this is an understood fact, read more about it [here](../development-practices/modular-deployment.md). sfpowerscripts will always be built with features to optimize for speed but still ensuring the org is traceable compared to the traditional happy soup model most organisations are burdened with today.
+As packages are always deployed in its entirety, this is an understood fact, read more about it [here](../../development-practices/modular-deployment.md). sfpowerscripts will always be built with features to optimize for speed but still ensuring the org is traceable compared to the traditional happy soup model most organisations are burdened with today.
 
 Features currently enabling this principle include
 

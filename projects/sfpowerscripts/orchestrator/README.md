@@ -14,7 +14,7 @@ description: Orchestrate your builds and deployment with minimal code/config
 
 To understand the orchestrator, let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, prepare and validate states are not discussed.
 
-![](<../../.gitbook/assets/image (52).png>)
+![](<../../../.gitbook/assets/image (52).png>)
 
 
 

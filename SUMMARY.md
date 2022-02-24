@@ -1,7 +1,7 @@
 # Table of contents
 
 * [DX@Scale](README.md)
-* [Principles](principles.md)
+* [⚖ Principles](principles.md)
 
 ## 🤸 Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
 
@@ -124,7 +124,7 @@
 
 ***
 
-* [Tools & Assets Registry](assets-registry.md)
+* [🍱 Tools & Assets Registry](assets-registry.md)
 
 ## 🌈 About Us
 

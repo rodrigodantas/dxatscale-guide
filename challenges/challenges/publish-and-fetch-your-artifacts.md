@@ -22,13 +22,13 @@ You can also use the command below in the terminal to get more information
 sfdx sfpowerscripts:orchestrator:publish --help
 ```
 
-### Read more about the publish command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/publish)
+**Read more about the publish command and how it is being used in the** [**link**](../../projects/sfpowerscripts/orchestrator/publish.md)****
 
 **Artifacts**
 
 Artifacts are a key concept in sfpowerscripts. Artifacts are traceable, versioned, immutable entities that get generated during the build or promote command. sfpowerscripts artifacts contain the source code of the package, metadata information, changelog and much more. Artifacts help sfpowerscripts to orchestrate deployment without being tied to the notion of branches.
 
-### Read more about artifacts and how it is being used in the [link](https://dxatscale.gitbook.io/sfpowerscripts/faq/artifacts)
+**Read more about artifacts and how it is being used in the**[ **link**](../../projects/sfpowerscripts/artifacts.md)****
 
 ## Release Command
 
@@ -44,11 +44,11 @@ You can also use the command below in the terminal to get more information
 sfdx sfpowerscripts:orchestrator:release --help
 ```
 
-### Read more about the release command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/release)
+**Read more about the release command and how it is being used in the** [**link**](../../projects/sfpowerscripts/orchestrator/release.md)****
 
 ## Steps
 
-### Create a Personal Access token to publish packages to GitHub Package manager
+#### Create a Personal Access token to publish packages to GitHub Package manager
 
 * In the upper-right corner of any page, click your profile photo, then click **Settings**.
 

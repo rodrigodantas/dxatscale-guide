@@ -1,9 +1,9 @@
 # Table of contents
 
 * [DX@Scale](README.md)
-* [⚖ Principles](principles.md)
+* [Principles](principles.md)
 
-## 🤸 Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
+## Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
 
 * [Intro](challenges/intro.md)
 * [Prerequisites](challenges/prerequisites.md)
@@ -66,12 +66,12 @@
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
     * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
-## 📅 Release Management <a href="#release" id="release"></a>
+## Release Management <a href="#release" id="release"></a>
 
 * [Monitoring Releases](release/monrel.md)
 * [Releasing to an Environment](release/release-environment.md)
 
-## 🍨 Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
+## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
@@ -124,7 +124,7 @@
 
 ***
 
-* [🍱 Tools & Assets Registry](assets-registry.md)
+* [Tools & Assets Registry](assets-registry.md)
 
 ## 🌈 About Us
 

@@ -99,7 +99,9 @@
 
 ## ⁉ faq
 
-* [Packaging](faq/packaging.md)
+* [Packaging](faq/packaging/README.md)
+  * [Unlocked Package](faq/packaging/unlocked-package.md)
+  * [Data Package](faq/packaging/data-package.md)
 * [sfpowerscripts](faq/sfpowerscripts.md)
 
 ## 🎬 Media Library

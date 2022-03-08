@@ -1,4 +1,4 @@
-# Packaging
+# Unlocked Package
 
 ### How to change type of a package from Unlocked to Org Dependent Unlocked package?
 
@@ -33,4 +33,3 @@ Yes, an unlocked package or managed package can be added as a dependency to sour
 ### Can I add a source package as a dependency to unlocked package?
 
 No, source package is a sfpowerscripts only construct.  From a salesforce perspective, it's nothing more than metadata deployment, hence salesforce is unaware of such a package. Unlocked packages only allow any other unlocked (excluding org dependent unlocked) and managed package to be added as a dependency. All the dependency is validated during the build stage any incorrect dependency will result in error
-

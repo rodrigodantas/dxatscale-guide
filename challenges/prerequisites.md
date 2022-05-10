@@ -12,6 +12,8 @@ description: >-
 
 {% embed url="https://trailhead.salesforce.com/users/dxatscale/trailmixes/sfdx-devops-starter-pack" %}
 
+{% embed url="https://trailhead.salesforce.com/en/users/ruth-the-architect/trailmixes/adopting-package-based-development-at-scale" %}
+
 {% embed url="https://missing.csail.mit.edu" %}
 
 {% embed url="https://www.pluralsight.com/courses/master-git" %}

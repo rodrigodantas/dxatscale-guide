@@ -10,7 +10,7 @@ description: >-
 
 {% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting_force_com" %}
 
-{% embed url="https://trailhead.salesforce.com/en/users/vuha-acn/trailmixes/sfdx-dev-ops-starter-pack" %}
+{% embed url="https://trailhead.salesforce.com/users/dxatscale/trailmixes/sfdx-devops-starter-pack" %}
 
 {% embed url="https://missing.csail.mit.edu" %}
 
@@ -61,7 +61,7 @@ sfdx plugins:install @dxatscale/sfpowerscripts
 2. Go to [https://trailhead.salesforce.com/users/profiles/orgs](https://trailhead.salesforce.com/users/profiles/orgs%20)
 3. Create 2 trailhead playgrounds
 
-![](<../.gitbook/assets/image (8) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)
 
 ## Signup for your own Github Account <a href="#user-content-6.-signup-for-your-own-github-account-2c-ignore-if-you-already-have-one" id="user-content-6.-signup-for-your-own-github-account-2c-ignore-if-you-already-have-one"></a>
 

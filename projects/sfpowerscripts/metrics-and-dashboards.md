@@ -10,8 +10,8 @@ Metrics should be a key part of your DevOps process. It is through these metrics
 
 ### Stats D
 
-* Ensure you have a StatsD Daemon running on a server, Setting up StatsD daemon on a server is quite simple, there are lot of guides available ([https://www.scalyr.com/blog/statsd-measure-anything-in-your-system/](https://www.scalyr.com/blog/statsd-measure-anything-in-your-system/)) . If you are after a hosted StatsD, hosted Graphite offers a hosted StatsD solution as part of their Hosted Graphite offering ([https://www.hostedgraphite.com/docs/integrationguide/ig\_hosted\_statsd.html](https://www.hostedgraphite.com/docs/integrationguide/ig\_hosted\_statsd.html)).&#x20;
-* Ensure your build agents can reach the StatsD server, this can be bit problematic, when you are using cloud based agents, which imply StatsD service has to be on the internet and reachable from the agent, so plan this out.  If you are using self hosted agents, the StatsD server should be reachable as well.
+* Ensure you have a StatsD Daemon running on a server, Setting up StatsD daemon on a server is quite simple, there are lot of guides available ([https://www.scalyr.com/blog/statsd-measure-anything-in-your-system/](https://www.scalyr.com/blog/statsd-measure-anything-in-your-system/)) . If you are after a hosted StatsD, hosted Graphite offers a hosted StatsD solution as part of their Hosted Graphite offering ([https://www.hostedgraphite.com/docs/integrationguide/ig\_hosted\_statsd.html](https://www.hostedgraphite.com/docs/integrationguide/ig\_hosted\_statsd.html)).
+* Ensure your build agents can reach the StatsD server, this can be bit problematic, when you are using cloud based agents, which imply StatsD service has to be on the internet and reachable from the agent, so plan this out. If you are using self hosted agents, the StatsD server should be reachable as well.
 * To visualize these metrics, you need a StatsD Backend ([https://thenewstack.io/collecting-metrics-using-statsd-a-standard-for-real-time-monitoring/](https://thenewstack.io/collecting-metrics-using-statsd-a-standard-for-real-time-monitoring/)) such as DataDog (Hosted), Graphana, and many others to aggergate and report data.
 * Enable StatsD metrics in your scripts by adding these environment variables
 
@@ -96,10 +96,10 @@ The following are the list of metrics that are captured.
 | sfpowerscripts.package.testcoverage               | Test Coverage of a package                                                                                          | GAUGE |
 | sfpowerscripts.apextests.triggered                | Number of times apex tests were triggered for a package                                                             | COUNT |
 | sfpowerscripts.apextest.testtotal                 | Time taken for Apex Test Execution                                                                                  | GAUGE |
-| sfpowerscripts.apextest.command.time              | Time taken for Apex Test  Execution (Command Time)                                                                  | GAUGE |
+| sfpowerscripts.apextest.command.time              | Time taken for Apex Test Execution (Command Time)                                                                   | GAUGE |
 | sfpowerscripts.prepare.succeededorgs              | Number of orgs that were succeeded during a run of prepare                                                          | GAUGE |
 | sfpowerscripts.prepare.failedorgs                 | Number of orgs that failed during a run of prepare                                                                  | GAUGE |
-| sfpowerscripts.prepare.duration                   | Time take to prepare a  pool of scratchorgs                                                                         | GAUGE |
+| sfpowerscripts.prepare.duration                   | Time take to prepare a pool of scratchorgs                                                                          | GAUGE |
 | sfpowerscripts.prepare.org.checkpointfailed       | Number of scratch orgs that failed on a checkpoint, during prepare                                                  | COUNT |
 | sfpowerscripts.prepare.org.partial                | Number of scratch orgs that partially succeeded, during prepare                                                     | COUNT |
 | sfpowerscripts.prepare.packages.scheduled         | Number of packages scheduled for installation when preparing scratch org pools                                      | GAUGE |
@@ -116,8 +116,8 @@ The following are the list of metrics that are captured.
 | sfpowerscripts.release.workitems                  | Aggregated count of workitems in a release (a release is identified by the identifier used in a release definition) | GUAGE |
 | sfpowerscripts.release.commits                    | Aggregated count of commits in a release (a release is identified by the identifier used in a release definition)   | GUAGE |
 
-## Sample Dashboards&#x20;
+## Sample Dashboards
 
 ![](../../.gitbook/assets/dashboard\_edited.png)
 
-![](<../../.gitbook/assets/image (52) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (52) (1) (1).png>)

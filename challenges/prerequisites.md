@@ -64,6 +64,12 @@ sfdx plugins:install sfpowerkit
 sfdx plugins:install @dxatscale/sfpowerscripts
 ```
 
+## Install sfp-cli
+
+```
+sfdx plugins:install @dxatscale/sfpowerscripts
+```
+
 ## Create 2 Trailhead Playgrounds <a href="#user-content-5.--create-2-trailhead-playgrounds" id="user-content-5.--create-2-trailhead-playgrounds"></a>
 
 1. Login to myTrailhead [https://trailhead.salesforce.com/home](https://trailhead.salesforce.com/home)

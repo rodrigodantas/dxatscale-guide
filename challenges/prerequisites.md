@@ -32,6 +32,10 @@ If you do not have access to Pluralsight, here are some free resources to get yo
 
 [https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-salesforce-dx](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-salesforce-dx)
 
+```
+npm install --global sfdx-cli
+```
+
 ## Install Visual Studio Code + Salesforce Extension Pack <a href="#user-content-2.-install-visual-studio-code-2b-salesforce-extension-pack" id="user-content-2.-install-visual-studio-code-2b-salesforce-extension-pack"></a>
 
 Follow the instructions in the [https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-visual-studio-code](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-visual-studio-code)

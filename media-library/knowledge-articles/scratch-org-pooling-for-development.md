@@ -2,7 +2,7 @@
 description: Published on February 24, 2021 by Caitlyn Mills
 ---
 
-# Scratch Org pooling for development
+# Scratch Org Pooling for Development
 
 In [Part 1](https://www.linkedin.com/pulse/scratch-orgs-scale-part-1-caitlyn-mills/?trackingId=oxGR4J1wcwKpDFQxciU%2FHA%3D%3D) we discussed scratch org pooling for Continuous Integration using the sfpowerscripts orchestrator:prepare command. Today we are going to apply the same concept of a **scratch org pool for development** using [sfpowerkit](https://github.com/Accenture/sfpowerkit).
 
@@ -19,7 +19,7 @@ This is where pooling for development comes in. If you have a pool of scratch or
 3. Now the action starts! You create your pool with this incredible command that looks so simple
 
 ```
-sfdx sfpowerkit:pool:create -f <config_file_path> -v Devhub
+sfdx sfpowerkit:pool:create -f <config_file_path> -v Devhub 
 ```
 
 This command should be run in your CI server, with admin permissions to your DevHub, otherwise the fetch commands, detailed below, will not provide the expected results. It should be run on a regular schedule to ensure that your pool is replenished as required.

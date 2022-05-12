@@ -9,8 +9,8 @@ The Data Package offers a seamless method of integrating Salesforce data into yo
 Data packages are a wrapper around SFDMU that provide a few key benefits:
 
 * **Ability to skip the package if already installed:** By keeping a record of the version of the package installed in the target org with the support of an unlocked package, sfpowerscripts can skip installation of data packages if it is already installed in the org
-* **Versioned Artifact:**  Aligned with sfpowerscripts principle of traceability, every deployment is traceable to a versioned artifact, which is difficult to achieve when you are using a folder to deploy
-* **Orchestration:** Data package creation and installation can be orchestrated by sfpowerscripts, which means less scripting&#x20;
+* **Versioned Artifact:** Aligned with sfpowerscripts principle of traceability, every deployment is traceable to a versioned artifact, which is difficult to achieve when you are using a folder to deploy
+* **Orchestration:** Data package creation and installation can be orchestrated by sfpowerscripts, which means less scripting
 
 ## Defining a Data package
 
@@ -67,7 +67,7 @@ sfdx force:apex:execute -f scripts/datascript.apex -u $2
 
 sfpowerscripts support vlocity RBC migration usng the vlocity build tool (vbt). sfpowerscripts will be automatically able to detect whether a data package need to be deployed using vlocity or using sfdmu. (Please not to enable vlocity in preparing scratchOrgs, the enableVlocity flag need to be turned on in the pool configuration file)
 
-![Defining a vlocity data package](<../../.gitbook/assets/image (15).png>)
+![Defining a vlocity data package](<../../.gitbook/assets/image (15) (1).png>)
 
 A vlocity data package need to have vlocityComponents.yaml file in the root of the package directory and it should have the following defintion
 
@@ -88,8 +88,3 @@ The same package would be defined in the sfdx-project.json as follows
             "type": "data"
         },
 ```
-
-
-
-
-

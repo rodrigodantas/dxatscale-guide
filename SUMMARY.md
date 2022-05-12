@@ -114,7 +114,7 @@
   * [Building packages for deployment](media-library/knowledge-articles/building-packages-for-deployment.md)
   * [Version Controlling Profiles and Why It Makes Sense for Deployments?](media-library/knowledge-articles/version-controlling-profiles-and-why-it-makes-sense-for-deployments.md)
   * [Validation in Continuous Integration](media-library/knowledge-articles/validation-in-continuous-integration.md)
-  * [Scratch Org pooling for CI](media-library/knowledge-articles/scratch-org-pooling-for-ci.md)
+  * [Scratch Org Pooling for CI](media-library/knowledge-articles/scratch-org-pooling-for-ci.md)
   * [Scratch Org pooling for development](media-library/knowledge-articles/scratch-org-pooling-for-development.md)
   * [Adopting Package Based Development Model in Salesforce](media-library/knowledge-articles/adopting-package-based-development-model-in-salesforce.md)
   * [Elevate your Salesforce deployment experience with just 6 commands](media-library/knowledge-articles/elevate-your-salesforce-deployment-experience-with-just-6-commands.md)

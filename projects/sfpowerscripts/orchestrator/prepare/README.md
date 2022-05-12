@@ -6,11 +6,11 @@ description: Prepare a pool of just-in-time CI scratch orgs or Development Envir
 
 Prepare command helps you to build a pool of prebuilt scratch orgs which include managed packages as well as packages in your repository. This process allows you to cut down time in re-creating a scratch org during validation process when a scratch org is used as just-in-time CI environment or when being used as a developer environment.
 
-## Building a pool of scratch orgs
+## Building a Pool of Scratch Orgs
 
 As you try to automate more of your business processes in Salesforce, you cannot avoid adding third party managed packages as a dependency to your configuration metadata and code in your repository. The time required to spin up a just-in-time CI scratch org or even a developer environment (one need to run data loading scripts, assign permission sets etc.) would increase and the value of scratch org diminishes, as teams find it cumbersome.
 
-This is the primary reason scratch org pools pre-installed with managed packages and your custom configuration and code, along with data from your repository will significantly enhance the developer experience.&#x20;
+This is the primary reason scratch org pools pre-installed with managed packages and your custom configuration and code, along with data from your repository will significantly enhance the developer experience.
 
 {% hint style="info" %}
 The Prepare command was built primarily due to the delays from Salesforce to enable **snapshot** feature and make it GA to the public. However, even with snapshot feature, you might need to rebuild the snapshot every day, as we have noticed in a large mono repo scenario (full deployment of metadata also takes long time). We will modify the command as needed when this feature launches to utilize snapshot accordingly.
@@ -24,7 +24,7 @@ Note that to enable scratch org pooling, you will need to deploy some prerequisi
 
 ## Steps undertaken by prepare command
 
-The prepare command does the following sequence of activities
+The prepare command does the following sequence of activities:
 
 1. **Calculate the number of scratch orgs to be allocated** (Based on your requested number of scratch orgs and your org limits, we calculate what is the number of scratch orgs to be allocated at this point in time)
 2. **Fetch the artifacts from registry if "fetchArtifacts" is defined in config, otherwise build all artifacts**
@@ -33,23 +33,23 @@ The prepare command does the following sequence of activities
    * Install SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE (04t1P000000ka9mQAA) for keeping track of all the packages which will be installed in the org. You can set an environment variable SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE to override the installation with your own package id (the source code is available [here](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact))
    * Install all the dependencies of your packages, such as managed packages that are marked as dependencies in your sfdx-project.json
    * Install all the artifacts that is either built/fetched
-   * If `enableSourceTracking` is specified in the configuration, create and deploy "sourceTrackingFiles" static resource to the scratch org. The static resource is retrieved to the local ".sfdx" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking.&#x20;
+   * If `enableSourceTracking` is specified in the configuration, create and deploy "sourceTrackingFiles" static resource to the scratch org. The static resource is retrieved to the local ".sfdx" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking.
 5. **Mark each completed scratch org as "Available"**
 6. **Delete all the failed scratch orgs** - check **Why do some scratch org's fail during pool creation?** below
 
 {% hint style="warning" %}
-&#x20;**Ensure that your DevHub is authenticated using** [**SFDX Auth URL**](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) **and the auth URL is stored in a secure place (Key Management System or Secure Storage).**
+**Ensure that your DevHub is authenticated using** [**SFDX Auth URL**](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) **and the auth URL is stored in a secure place (Key Management System or Secure Storage).**
 {% endhint %}
 
 ## **Using pre-existing artifacts in Scratch Org Pools**
 
-Building packages from source code during pooling takes a considerable amount of time, and there could be situations where the latest head is broken. Hence we recommend using the last-known successful build from the artifact repository. When the `installall` and `fetchArtifacts` configurations are specified, the user can either use **NPM** to fetch artifacts or define the path to a shell script containing the logic for fetching artifacts from a registry. &#x20;
+Building packages from source code during pooling takes a considerable amount of time, and there could be situations where the latest head is broken. Hence we recommend using the last-known successful build from the artifact repository. When the `installall` and `fetchArtifacts` configurations are specified, the user can either use **NPM** to fetch artifacts or define the path to a shell script containing the logic for fetching artifacts from a registry.
 
 {% hint style="info" %}
-&#x20;If the `installall` configuration is specified without `fetchArtifacts`, then new packages will be built, from the checked-out source code, and installed in the scratch orgs.
+If the `installall` configuration is specified without `fetchArtifacts`, then new packages will be built, from the checked-out source code, and installed in the scratch orgs.
 {% endhint %}
 
-## Fetching Scratch Orgs from pool
+## Fetching Scratch Orgs from Pool
 
 While scratch orgs created by prepare command will be automatically fetched by the validate command, for use as Just in time environments for validating an incoming change. Developers who need a scratch org from the pool must issue the fetch command on their terminal
 
@@ -64,12 +64,12 @@ When [Free Limited Access Licenses](https://developer.salesforce.com/docs/atlas.
 {% endhint %}
 
 {% hint style="info" %}
-Please check the [prerequisites](broken-reference) page to learn more about and the steps required to enable pooling in your DevHub
+Please check the [prerequisites](broken-reference/) page to learn more about and the steps required to enable pooling in your DevHub
 {% endhint %}
 
 ## Managing Package Dependencies
 
-The Prepare command utilises `sfpowerkit:package:dependencies:install` under the hood to orchestrate installation of package dependencies. Package dependencies are defined in the sfdx-project.json. More information on defining package dependencies can be found in the Salesforce [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev2gp\_config\_file.htm).
+The Prepare command utilizes `sfpowerkit:package:dependencies:install` under the hood to orchestrate installation of package dependencies. Package dependencies are defined in the sfdx-project.json. More information on defining package dependencies can be found in the Salesforce [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev2gp\_config\_file.htm).
 
 ```javascript
 {
@@ -117,9 +117,9 @@ The Prepare command utilises `sfpowerkit:package:dependencies:install` under the
 Let's unpack the concepts utilizing the above example:
 
 * There are two unlocked packages
-  * Expense Manager - Util is an unlocked package in your DevHub, identifiable by 0H in the packageAlias
-  * Expense Manager - another unlocked package which is dependent on ' Expense Manager - Util', 'TriggerFramework' and  'External Apex Library - 1.0.0.4'
-* External Apex Library is an external dependency, It could be a managed package or any unlocked package released on a different Dev Hub. All external package dependencies have to be defined with a 04t ID, which can be determined from the installation URL from AppExchange or by contacting your vendor.
+  * Expense Manager - Util is an unlocked package in your DevHub, identifiable by **0H** in the packageAlias
+  * Expense Manager - another unlocked package which is dependent on ' Expense Manager - Util', 'TriggerFramework' and 'External Apex Library - 1.0.0.4'
+* External Apex Library is an external dependency, It could be a managed package or any unlocked package released on a different Dev Hub. All external package dependencies have to be defined with a **04t** ID, which can be determined from the installation URL from AppExchange or by contacting your vendor.
 * sfpowerscripts parses sfdx-project.json and does the following in order
   * Skips Expense manager - Util as it doesn't have any dependencies
   * For Expense manager
@@ -141,13 +141,13 @@ The time taken by this command depends on how many managed packages and your pac
 
 ## Handling a change in shape of pooled scratch orgs
 
-For changes to the features and settings in pooled scratch orgs, check out the [validate command's documentation](broken-reference), which has information on how to dynamically update the shape of already created scratch orgs. Otherwise, the existing pool can be deleted and created again.
+For changes to the features and settings in pooled scratch orgs, check out the [validate command's documentation](broken-reference/), which has information on how to dynamically update the shape of already created scratch orgs. Otherwise, the existing pool can be deleted and created again.
 
 ## Managing the Scratch Org pool
 
 The `sfpowerscripts:pool` topic contains commands that can be used to manage (list, fetch and delete) the scratch org pools created by prepare command.
 
-## Package checkpoints
+## Package Checkpoints
 
 Package checkpoints allow precise control over which scratch orgs are committed to a pool when there are deployment failures and the `succeedOnDeploymentErrors` configuration is specified. To designate a package as a checkpoint, add the property `checkpointForPrepare: true` to the package in the sfdx-project.json. Only scratch orgs that satisfy at least one checkpoint will be committed to the pool. This provides more consistency in what you can expect from your scratch orgs.
 
@@ -159,7 +159,7 @@ There are multiple parameters available in the shell script. Pass these paramete
 
 1. Artifact name
 2. Artifact version
-3. Directory to download artifacts&#x20;
+3. Directory to download artifacts
 
 **Eg.** **Fetching from Azure Artifacts using the Az CLI on Linux**
 
@@ -175,4 +175,3 @@ echo "Downloading Artifact $1 Version $2"
 az artifacts universal download --feed myfeed --name $1 --version $2 --path $3 \
     --organization "https://dev.azure.com/myorg/" --project myproject --scope project
 ```
-

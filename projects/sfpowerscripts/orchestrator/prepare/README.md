@@ -57,14 +57,14 @@ While scratch orgs created by prepare command will be automatically fetched by t
 sfdx sfpowerscripts:pool:fetch -t <POOL_NAME> -v <devhub-alias> -a <scratchorg-alias>
 ```
 
-Developers need sufficient permission in the associated DevHub to fetch a scratch org. Read more about associated permissions [here](https://sfpowerscripts.dxatscale.io/getting-started/prerequisites#grant-developers-access-to-scratch-org-pools).
+Developers need sufficient permission in the associated DevHub to fetch a scratch org. Read more about associated permissions [here](../../prerequisites.md).
 
 {% hint style="warning" %}
 When [Free Limited Access Licenses](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/dev\_hub\_license.htm) are being utilized, developers will not be able to delete the scratch orgs fetched from the pool (due to permission restrictions). It is recommended to build a pipeline in your CI/CD system that is run with elevated permission and license which could delete these scratch orgs.
 {% endhint %}
 
 {% hint style="info" %}
-Please check the [prerequisites](broken-reference/) page to learn more about and the steps required to enable pooling in your DevHub
+Please check the [prerequisites](../../prerequisites.md) page to learn more about and the steps required to enable pooling in your DevHub
 {% endhint %}
 
 ## Managing Package Dependencies

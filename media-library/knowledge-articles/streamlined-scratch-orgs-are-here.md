@@ -4,7 +4,7 @@ description: Published by Caitlyn Mills on July 15, 2021
 
 # Streamlined Scratch Orgs are here!
 
-**Breaking news! (and breaking features)**
+****[**Breaking news! (and breaking features)**](https://www.linkedin.com/pulse/streamlined-scratch-orgs-here-caitlyn-mills/)****
 
 I've already written about scratch org pooling, right? How can we possible make it better? Let's recap on how pools currently work.
 
@@ -20,7 +20,7 @@ Your Git repo is (should be) your 'source of truth' when it comes to package-bas
 * push and pull changes to the source
 * identification and resolution of conflicts between your developer org and your source code
 
-More information on source tracking including best practices can be found here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_source\_tracking.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_source\_tracking.htm)
+More information on source tracking including best practices can be found [here](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_source\_tracking.htm).
 
 **How does this improve pools?**
 
@@ -31,7 +31,7 @@ What we have done now is streamline all of these activities, ensuring your scrat
 Prepare for developer pooling is now a 'one stop shop' for creating developer scratch orgs which are ready to use straight out of the box\
 .
 
-![No alt text provided for this image](https://media-exp1.licdn.com/dms/image/C5612AQG28HePrTDVAw/article-inline\_image-shrink\_1000\_1488/0/1626327551967?e=1632960000\&v=beta\&t=Ohc-4L1VNqQD\_l7Y939GjfIy3X2Gtq3LhV4e7qn9118)
+![](../../.gitbook/assets/1626327551967.png)
 
 **How have we done this?**
 
@@ -62,7 +62,7 @@ We have also updated the pool config files, you'll notice some slight difference
 
 **What's next?**
 
-Going along with the release (est. 1 August) we will have some instructions if you are ready to upgrade. Don't stress if you aren’t quite ready, you should switch to the previous version of the docker image in your orchestrator commands, as this is a breaking feature. [https://hub.docker.com/r/dxatscale/sfpowerscripts](https://hub.docker.com/r/dxatscale/sfpowerscripts)
+Going along with the release (est. 1 August) we will have some instructions if you are ready to upgrade. Don't stress if you aren’t quite ready, you should switch to the previous version of the [docker image](https://hub.docker.com/r/dxatscale/sfpowerscripts) in your orchestrator commands, as this is a breaking feature.&#x20;
 
 _You can read my previous articles about scratch org pooling here:_
 

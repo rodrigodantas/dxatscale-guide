@@ -4,6 +4,4 @@ We have designed a series of hands-on challenges to get you up to speed on Sales
 
 Hope it helps!
 
-
-
-PS: You can skip this section if you are already familiar with Salesforce DX, Git and concepts of packaging. Head to [Get Started](broken-reference) to set up your DX@Scale Project
+PS: You can skip this section if you are already familiar with Salesforce DX, Git and concepts of packaging. Head to [Reference Implementation ](../ci-cd/reference-implementation/)to set up your DX@Scale Project

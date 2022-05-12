@@ -52,10 +52,11 @@ Follow Instructions on installing GIT\
 
 Follow instructions on installing NodeJS LTS [https://nodejs.org/en/](https://nodejs.org/en/)
 
-## Install sfpowerkit <a href="#user-content-4.-install-sfpowerkit" id="user-content-4.-install-sfpowerkit"></a>
+## Install [sfpowerkit](https://github.com/accenture/sfpowerkit#installation) <a href="#user-content-4.-install-sfpowerkit" id="user-content-4.-install-sfpowerkit"></a>
 
-Follow Instructions on installing sfpowerkit\
-[https://github.com/accenture/sfpowerkit#installation](https://github.com/accenture/sfpowerkit#installation)
+```
+sfdx plugins:install sfpowerkit
+```
 
 ## Install sfpowerscripts
 

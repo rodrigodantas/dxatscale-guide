@@ -81,6 +81,7 @@
 
 * [sfpowerscripts](projects/sfpowerscripts/README.md)
   * [Features](projects/sfpowerscripts/features.md)
+  * [Prerequisites](projects/sfpowerscripts/prerequisites.md)
   * [Docker Images](projects/sfpowerscripts/docker-images.md)
   * [Metrics and Dashboards](projects/sfpowerscripts/metrics-and-dashboards.md)
   * [Orchestrator](projects/sfpowerscripts/orchestrator/README.md)

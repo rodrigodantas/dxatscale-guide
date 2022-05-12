@@ -19,7 +19,7 @@ The Prepare command was built primarily due to the delays from Salesforce to ena
 We expect you to build a pool of scratch org's using a pipeline at scheduled intervals, that ensures the pools are always replenished with scratch org's ready for consumption whenever you demand it.
 
 {% hint style="info" %}
-Note that to enable scratch org pooling, you will need to deploy some prerequisite fields to the ScratchOrgInfo Object in Dev Hub. The additional fields determine which pool a scratch org belongs to and also allows the validate and fetch commands to fetch scratch orgs from a pool. Instructions on how to install the prerequisite package that contains the fields are available [here](https://sfpowerscripts.dxatscale.io/getting-started/prerequisites).
+Note that to enable scratch org pooling, you will need to deploy some prerequisite fields to the ScratchOrgInfo Object in Dev Hub. The additional fields determine which pool a scratch org belongs to and also allows the validate and fetch commands to fetch scratch orgs from a pool. Instructions on how to install the prerequisite package that contains the fields are available [here](../../prerequisites.md).
 {% endhint %}
 
 ## Steps undertaken by prepare command

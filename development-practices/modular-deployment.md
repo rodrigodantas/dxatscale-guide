@@ -33,6 +33,8 @@ A modular deployment provides the following benefits:
 
 It is often seen that **Option 1** is adopted across Salesforce ecosystem as it provides an immediately perceived increase in deployment velocity, but selective deployment without organizing into functional blocks over a longer time slows the development/deployment velocity **by increasing the cognitive overhead on development, testing and release management teams.**, think 1000 apex classes in a single folder!
 
+{% embed url="https://twitter.com/dxatscale/status/1521801559876718595?s=20&t=kPqxDsEhxiIgJJvFAGaJFw" %}
+
 The modules should be aligned with various domains and functionality the org caters to. This will also allow one to achieve the following benefits:
 
 * Utilize a release management which is centred around versioned modules as opposed to components, ensuring faster deployments that are traceable to versioned artifacts.

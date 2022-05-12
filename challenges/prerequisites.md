@@ -6,7 +6,7 @@ description: >-
 
 # Prerequisites
 
-## Learning Pre-requisites
+## Learning Prerequisites
 
 {% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting_force_com" %}
 
@@ -25,6 +25,8 @@ If you do not have access to Pluralsight, here are some free resources to get yo
 {% embed url="https://www.atlassian.com/git" %}
 
 {% embed url="https://lab.github.com/githubtraining/first-day-on-github" %}
+
+{% embed url="https://www.youtube.com/watch?t=106s&v=2sjqTHE0zok" %}
 
 ## Install SFDX CLI <a href="#user-content-1.-sfdx-cli" id="user-content-1.-sfdx-cli"></a>
 
@@ -57,7 +59,7 @@ Follow Instructions on installing sfpowerkit\
 sfdx plugins:install @dxatscale/sfpowerscripts
 ```
 
-## Create 2 trailhead playgrounds <a href="#user-content-5.--create-2-trailhead-playgrounds" id="user-content-5.--create-2-trailhead-playgrounds"></a>
+## Create 2 Trailhead Playgrounds <a href="#user-content-5.--create-2-trailhead-playgrounds" id="user-content-5.--create-2-trailhead-playgrounds"></a>
 
 1. Login to myTrailhead [https://trailhead.salesforce.com/home](https://trailhead.salesforce.com/home)
 2. Go to [https://trailhead.salesforce.com/users/profiles/orgs](https://trailhead.salesforce.com/users/profiles/orgs%20)
